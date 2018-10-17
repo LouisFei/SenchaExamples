@@ -1,0 +1,49 @@
+{
+    "name": "SideMenu",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "lockUrlPrefix": true,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "a705110d-4ce3-4545-a748-7f920677364e",
+            "d77e9686-fe86-4d30-bd36-7e3bd52cfa59",
+            "b3b9ee8b-b1d5-4b04-95eb-7b2473518f97"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "78dfd286-f2d0-4843-9e8f-c71156230a59",
+            "1b5cd324-3a66-4a22-aa0c-f03df483d8b3"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

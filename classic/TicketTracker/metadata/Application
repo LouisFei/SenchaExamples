@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "TicketController"
+        ],
+        "models": [
+            "Ticket"
+        ],
+        "name": "TicketTracker",
+        "stores": [
+            "TicketStore"
+        ],
+        "views": [
+            "TicketPanel",
+            "TicketDataView",
+            "TicketForm",
+            "TicketFormWindow"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

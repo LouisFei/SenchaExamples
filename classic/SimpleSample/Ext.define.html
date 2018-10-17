@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>Ext.define</title>
+
+    <link href="ext/build/classic/theme-classic/resources/theme-classic-all-debug.css" rel="stylesheet" />
+    <script src="ext/build/ext-all-debug.js" type="text/javascript"></script>
+
+    <script type="text/javascript">    
+        //alert('hello');
+        
+        // Ext.onReady(function(){
+        //     Ext.MessageBox.alert('hello','Hello World!');
+        // });
+
+        (function(){
+            console.log('开始你的表演……');
+
+            //定义一个"人"类
+            Ext.define('Person', {
+                name: 'Unknown',
+
+                constructor: function(name) {
+                    if(name){
+                        this.name = name;
+                    }
+                },
+
+                eat: function(foodType) {
+                    console.log("I'm eating: " + foodType);
+                    return this;
+                }
+            });
+
+            var mark = new Person('mark');
+            mark.eat('Sandwich');
+
+            //定义一个“程序员”类，继承自“人”类
+            Ext.define('Developer', {
+                extend: 'Person',
+
+                constructor: function(name, isGeek){
+                    this.isGeek = isGeek;
+
+                    //Apply a method from the parent class's prototype
+                    this.callParent([name]);
+                },
+
+                code: function(language){
+                    console.log("I'm coding in: " + language);
+                    this.eat('Bugs');
+                    return this;
+                }
+            });
+
+            var louis = new Developer('louis', false);
+            louis.code('JavaScript');
+
+
+            //会弹吉它
+            Ext.define('CanPlayGuitar', {
+                playGuitar: function(){
+                    console.log('Can play guitar');
+                }
+            });
+
+            //会编曲
+            Ext.define('CanComposeSongs', {
+                composeSongs: function(){
+                    console.log('Can compose songs');
+                }
+            });
+
+            //会唱歌
+            Ext.define('CanSing', {
+                sing: function(){
+                    console.log("For he's a jolly good fellow...");
+                }
+            });
+
+            //音乐家
+            Ext.define('Musician', {
+                extend: 'Person',
+
+                mixins: {
+                    canPlayGuitar: 'CanPlayGuitar',
+                    canComposeSongs: 'CanComposeSongs',
+                    canSing: 'CanSing',
+                }
+            });
+
+            var 音乐家 = new Musician('音乐家');
+            音乐家.playGuitar();
+            音乐家.composeSongs();
+            音乐家.sing();
+
+            //酷人
+            Ext.define('CoolPerson', {
+                extend: 'Person',
+
+                mixins: {
+                    canPlayGuitar: 'CanPlayGuitar',
+                    canSing: 'CanSing',
+                },
+
+                sing: function(){
+                    console.log('Ahem...');
+                    this.mixins.canSing.sing.call(this);
+                    console.log('[Playing guitar at the same time...]');
+                    this.playGuitar();
+                }
+            });
+
+            var jacky = new CoolPerson('Jacky');
+            jacky.sing();
+
+
+
+        })();
+    </script>
+</head>
+<body></body>
+</html>

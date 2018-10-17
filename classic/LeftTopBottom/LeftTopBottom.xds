@@ -1,0 +1,49 @@
+{
+    "name": "LeftTopBottom",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "lockUrlPrefix": true,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "f149c9f5-3fb0-42f1-8871-9c97d2c218f2",
+            "49da6ecf-506e-445b-aaab-eb28591910fa",
+            "550bb59b-5d19-4255-8fe5-477743aabf7b"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "ddf5f8d6-c5cd-4177-b7cf-1e9e006f44e0",
+            "5fbe9ede-f187-45a0-b10a-0be7a29b59a7"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

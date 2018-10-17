@@ -1,0 +1,372 @@
+{
+    "type": "Ext.pivot.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsible": true,
+        "defaultListenerScope": null,
+        "designer|initialView": true,
+        "designer|userAlias": "sales",
+        "designer|userClassName": "Sales",
+        "header": [
+            "{",
+            "        itemPosition: 1, // after title before collapse tool",
+            "        items: [{",
+            "            ui: 'default-toolbar',",
+            "            xtype: 'button',",
+            "            text: 'Dock',",
+            "            menu: {",
+            "                defaults: {",
+            "                    xtype: 'menucheckitem',",
+            "                    group:  'docking',",
+            "                    checkHandler: 'changeDock'",
+            "                },",
+            "                items: [{",
+            "                    text: 'Top'",
+            "                },{",
+            "                    text: 'Right',",
+            "                    checked: true",
+            "                },{",
+            "                    text: 'Bottom'",
+            "                },{",
+            "                    text: 'Left'",
+            "                }]",
+            "            }",
+            "        }]",
+            "    }"
+        ],
+        "height": 349,
+        "title": "Pivot Grid with Configurator plugin",
+        "width": 750
+    },
+    "configAlternates": {
+        "header": "object",
+        "collapsible": "boolean",
+        "defaultListenerScope": "boolean",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyGrid",
+    "designerId": "ff042fbf-57fc-4710-897b-b0b469e055fc",
+    "viewControllerInstanceId": "6954dce3-41ff-4ab6-a995-ebba97614466",
+    "viewModelInstanceId": "dfe6a992-9325-4bd8-8e2a-6c01e5cb6720",
+    "cn": [
+        {
+            "type": "Ext.pivot.matrix.Local",
+            "reference": {
+                "name": "matrix",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "store": "Sales"
+            },
+            "configAlternates": {
+                "store": "store"
+            },
+            "name": "MyLocalMatrix",
+            "designerId": "e04bc8f1-2157-436e-83cf-c0142432bad5",
+            "cn": [
+                {
+                    "type": "Ext.pivot.dimension.legacy.AggregateItem",
+                    "reference": {
+                        "name": "aggregate",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "aggregator": "avg",
+                        "dataIndex": "value",
+                        "header": "Value"
+                    },
+                    "configAlternates": {
+                        "aggregator": "string",
+                        "dataIndex": "datafield",
+                        "header": "string"
+                    },
+                    "name": "MyAggregateItem",
+                    "designerId": "f55012b5-6374-40aa-815c-883f2851973a"
+                },
+                {
+                    "type": "Ext.pivot.dimension.legacy.LeftAxisItem",
+                    "reference": {
+                        "name": "leftAxis",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "person",
+                        "header": "Person"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "header": "string"
+                    },
+                    "name": "MyLeftaxisItem",
+                    "designerId": "455fe918-8c88-466a-868b-a3d8aeb1acc1"
+                },
+                {
+                    "type": "Ext.pivot.dimension.legacy.TopAxisItem",
+                    "reference": {
+                        "name": "topAxis",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "year",
+                        "header": "Year"
+                    },
+                    "configAlternates": {
+                        "labelRenderer": "function",
+                        "dataIndex": "datafield",
+                        "header": "string"
+                    },
+                    "name": "MyTopaxisItem",
+                    "designerId": "02aaaeab-bc83-423d-9b11-b3eedc99121c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value"
+                                ],
+                                "fn": "labelRenderer",
+                                "implHandler": [
+                                    "return \"Year \" + value;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "labelRenderer",
+                            "designerId": "adadc50f-0a6a-4128-bd66-aacaf2789ff6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.pivot.dimension.legacy.LeftAxisItem",
+                    "reference": {
+                        "name": "leftAxis",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "company",
+                        "header": "Company",
+                        "sortable": false
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "header": "string",
+                        "sortable": "boolean"
+                    },
+                    "name": "MyLeftaxisItem1",
+                    "designerId": "5cac5534-80aa-42b5-b19e-b8491d0721bc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.selection.SpreadsheetModel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MySpreadsheetModel",
+            "designerId": "697b3c32-90ae-425c-bbb5-96cfd4d452ba"
+        },
+        {
+            "type": "Ext.pivot.plugin.Configurator",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "fields": [
+                    "[{",
+                    "            dataIndex:  'quantity',",
+                    "            header:     'Qty',",
+                    "            // You can even provide a default aggregator function to be used when this field is dropped",
+                    "            // on the agg dimensions",
+                    "            aggregator: 'min',",
+                    "            formatter: 'number(\"0\")',",
+                    "",
+                    "            settings: {",
+                    "                // Define here in which areas this field could be used",
+                    "                allowed: ['aggregate'],",
+                    "                // Set a custom style for this field to inform the user that it can be dragged only to \"Values\"",
+                    "                style: {",
+                    "                    fontWeight: 'bold'",
+                    "                },",
+                    "                // Define here custom formatters that ca be used on this dimension",
+                    "                formatters: {",
+                    "                    '0': 'number(\"0\")',",
+                    "                    '0%': 'number(\"0%\")'",
+                    "                }",
+                    "            }",
+                    "        }, {",
+                    "            dataIndex:  'value',",
+                    "            header:     'Value',",
+                    "",
+                    "            settings: {",
+                    "                // Define here in which areas this field could be used",
+                    "                allowed: 'aggregate',",
+                    "                // Define here what aggregator functions can be used when this field is",
+                    "                // used as an aggregate dimension",
+                    "                aggregators: ['sum', 'avg', 'count'],",
+                    "                // Set a custom style for this field to inform the user that it can be dragged only to \"Values\"",
+                    "                style: {",
+                    "                    fontWeight: 'bold'",
+                    "                },",
+                    "                // Define here custom renderers that can be used on this dimension",
+                    "                renderers: {",
+                    "                    'Colored 0,000.00': 'coloredRenderer'",
+                    "                },",
+                    "                // Define here custom formatters that ca be used on this dimension",
+                    "                formatters: {",
+                    "                    '0': 'number(\"0\")',",
+                    "                    '0.00': 'number(\"0.00\")',",
+                    "                    '0,000.00': 'number(\"0,000.00\")',",
+                    "                    '0%': 'number(\"0%\")',",
+                    "                    '0.00%': 'number(\"0.00%\")'",
+                    "                }",
+                    "            }",
+                    "        }, {",
+                    "            dataIndex:  'company',",
+                    "            header:     'Company',",
+                    "",
+                    "            settings: {",
+                    "                // Define here what aggregator functions can be used when this field is",
+                    "                // used as an aggregate dimension",
+                    "                aggregators: ['count']",
+                    "            }",
+                    "        }, {",
+                    "            dataIndex:  'country',",
+                    "            header:     'Country',",
+                    "",
+                    "            settings: {",
+                    "                // Define here what aggregator functions can be used when this field is",
+                    "                // used as an aggregate dimension",
+                    "                aggregators: ['count']",
+                    "            }",
+                    "        }, {",
+                    "            dataIndex: 'person',",
+                    "            header: 'Person',",
+                    "",
+                    "            settings: {",
+                    "                // Define here what aggregator functions can be used when this field is",
+                    "                // used as an aggregate dimension",
+                    "                aggregators: 'count'",
+                    "            }",
+                    "        }, {",
+                    "            dataIndex:  'year',",
+                    "            header:     'Year',",
+                    "",
+                    "            settings: {",
+                    "                // Define here the areas in which this field is fixed and cannot be moved from",
+                    "                fixed: ['topAxis']",
+                    "            }",
+                    "        }, {",
+                    "            dataIndex:      'month',",
+                    "            header:         'Month',",
+                    "            labelRenderer:  'monthLabelRenderer',",
+                    "",
+                    "            settings: {",
+                    "                // Define here what aggregator functions can be used when this field is",
+                    "                // used as an aggregate dimension",
+                    "                aggregators: ['count'],",
+                    "                // Define here in which areas this field could be used",
+                    "                allowed: ['leftAxis', 'topAxis']",
+                    "            }",
+                    "        }]"
+                ],
+                "id": "configurator",
+                "pluginId": "configurator"
+            },
+            "configAlternates": {
+                "designer|createAlias": "string",
+                "fields": "array",
+                "id": "string",
+                "pluginId": "string"
+            },
+            "name": "MyPivotConfigurator",
+            "designerId": "e175765c-f88a-4925-b6ac-e07220903154"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "panel, options"
+                ],
+                "fn": "getCustomMenus",
+                "implHandler": [
+                    "options.menu.add({",
+                    "    text: 'Custom menu item',",
+                    "    handler: function(){",
+                    "        Ext.Msg.alert('Custom menu item', Ext.String.format('Do something for \"{0}\"', options.field.getHeader()));",
+                    "    }",
+                    "});"
+                ],
+                "name": "beforeshowconfigfieldmenu",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "getCustomMenus",
+            "designerId": "e5b83235-9248-495d-9dbf-73159fc6f48c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button",
+                    "checked"
+                ],
+                "fn": "changeDock",
+                "implHandler": [
+                    "if(checked) {",
+                    "    this.getPlugin('configurator').setDock(button.text.toLowerCase());",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "changeDock",
+            "designerId": "cd99c61c-c41e-45ea-aeff-d90bc32b8fc8"
+        }
+    ]
+}

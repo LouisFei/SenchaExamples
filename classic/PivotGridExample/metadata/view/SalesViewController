@@ -1,0 +1,43 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sales",
+        "designer|userClassName": "SalesViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "6954dce3-41ff-4ab6-a995-ebba97614466",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "v"
+                ],
+                "fn": "monthLabelRenderer",
+                "implHandler": [
+                    "return Ext.Date.monthNames[v];"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "monthLabelRenderer",
+            "designerId": "db32db42-ada6-46a7-a656-dbd1d970d488"
+        }
+    ]
+}

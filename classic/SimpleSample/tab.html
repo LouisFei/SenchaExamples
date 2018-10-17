@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>tab</title>
+
+    <link href="../ext/build/classic/theme-classic/resources/theme-classic-all-debug.css" rel="stylesheet" />
+    <script src="../ext/build/ext-all-debug.js" type="text/javascript"></script>
+
+    <script type="text/javascript">    
+        //alert('hello');
+        
+        Ext.onReady(function(){
+            
+            Ext.create('Ext.tab.Panel', {
+                renderTo: Ext.getBody(),
+                width: 200,
+                height: 200,
+                listeners: {
+                    beforetabchange: function (tabs, newTab, oldTab) {
+                        return newTab.title != 'P2';
+                    },
+                    tabchange: function(tabs, newTab, oldTab){
+                        console.log('tabchange');
+                    }
+                },
+                items: [{
+                    title: 'P1',
+                    data_id: 11
+                }, {
+                    title: 'P2',
+                    data_id: 11
+                }, {
+                    title: 'P3',
+                    data_id: 11
+                }]
+            }); 
+            
+        });        
+
+    </script>
+</head>
+<body></body>
+</html>

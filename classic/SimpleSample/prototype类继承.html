@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>页面模板</title>
+
+    <link href="ext/build/classic/theme-classic/resources/theme-classic-all-debug.css" rel="stylesheet" />
+    <script src="ext/build/ext-all-debug.js" type="text/javascript"></script>
+
+    <script type="text/javascript">    
+        //alert('hello');
+        
+        // Ext.onReady(function(){
+        //     Ext.MessageBox.alert('hello','Hello World!');
+        // });
+
+        (function(){
+            console.log('开始你的表演……');
+
+            //<通过javascript的prototype特性，实现类的继承>
+            var BaseClass = function(){
+                console.log('BaseClass function');
+            };
+            BaseClass.prototype.someMethod = function(){
+                console.log('BaseClass.prototype.someMethod');
+            };
+            BaseClass.prototype.overridenMethod = function(){
+                console.log('BaseClass.prototype.overridenMethod');
+            };
+
+
+            var SubClass = function(){
+                BaseClass.call(this);
+                console.log('SubClass function');
+            };
+            SubClass.prototype = new BaseClass();
+            SubClass.prototype.newMethod = function(){
+                console.log('SubClass.prototype.newMethod');
+            };
+            SubClass.prototype.overridenMethod = function(){
+                console.log('SubClass.prototype.overridenMethod');
+            }
+
+            var sub = new SubClass();
+            sub.someMethod();
+            sub.newMethod();
+            sub.overridenMethod();
+            //</通过javascript的prototype特性，实现类的继承>
+
+        })();
+    </script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,52 @@
+{
+    "name": "PivotGridExample",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:50780/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "ff042fbf-57fc-4710-897b-b0b469e055fc",
+            "dfe6a992-9325-4bd8-8e2a-6c01e5cb6720",
+            "6954dce3-41ff-4ab6-a995-ebba97614466"
+        ],
+        "store": [
+            "7f103c5f-af2e-44fa-a900-ae884c0a46fe"
+        ],
+        "controller": [],
+        "model": [
+            "00a7c26b-c79a-4d81-87d1-364f7ed82fc2"
+        ],
+        "resource": [
+            "ec63f3b3-5092-423d-b204-6b90034c5b03",
+            "02ae936c-5c9e-4cd5-b352-e6fe3974e732"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

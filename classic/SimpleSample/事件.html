@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>事件</title>
+
+    <link href="ext/build/classic/theme-classic/resources/theme-classic-all-debug.css" rel="stylesheet" />
+    <script src="ext/build/ext-all-debug.js" type="text/javascript"></script>
+
+    <script type="text/javascript">    
+        //alert('hello');
+        
+        // Ext.onReady(function(){
+        //     Ext.MessageBox.alert('hello','Hello World!');
+        // });
+
+        (function(){
+            console.log('开始你的表演……');
+
+            Ext.onReady(function(){
+                var e = document.getElementById('test');
+                e.onclick = function(){
+                    console.log('handler1');
+                };
+                e.onclick = function(){
+                    console.log('handler2');
+                };
+                //上面使用的是html元素本身的事件，
+                //原生的事件处理是通过简单的单一绑定实现的，太简单，
+                //而且后定义的事件处理方法会覆盖掉之前定义的事件处理方法。
+
+                //Ext、jQuery这样的框架就不用担心原生事件的问题，同一个事件可以依次绑定多个事件处理句柄，如下例所示：
+
+                var test = Ext.get('test');
+                test.on('click', function(){
+                    console.log('handler1 from Ext');
+                });
+                test.on('click', function(){
+                    console.log('handler2 from Ext');
+                });
+                //发现这些框架所带的事件处理，还不会影响到原生事件的使用，说明它们的内部实现是隔离的。
+
+
+
+                //Ext.util.Observable
+                //Observable在Ext事件模型中有着举重轻重的地位，位于Ext组件的顶端，
+                //为Ext组件提供处理事件的最基本的功能。
+                //所有继承自Ext.util.Observable类的控件都可以支持事件。
+                //可以为这些继承了Ext.utilObservable的对象定义一些事件，
+                //然后为这些事件配置监听器。
+                //当某个事件触发时，Ext会自动调用对应的监听器，这些就是Ext的事件模型。
+
+                //定义一个Person类
+                function Person(name){
+                    this.name = name;
+                    //this.addEvents('walk', 'eat');//新版本不需要再事先定义事件了。
+                    this.superclass.constructor.call(this);
+                }
+                //1、让Person继承Ext.util.Observable的所有属性，
+                //   这样Person类构造器中的addEvents和Person.superclass.constructor.call()的实例创建时才会起作用。
+                //2、添加一个info()函数，让它返回Person信息。
+                Ext.extend(Person, Ext.util.Observable, {
+                    info: function(event){
+                        return this.name + ' is ' + (event ? event + 'ing' : 'doing nothing') + '.';
+                    }
+                });
+
+                //1、创建一个Person实例，然后为它的事件配置好监听器。
+                //2、on是addListener的简写，un是removeListener简写。
+                var person = new Person('路飞');
+                person.on('撸铁', function(){
+                    this.state = '撸铁中';
+                    Ext.Msg.alert('event', this.name + ' 正在撸铁中。');
+                });
+                person.on('吃', function(meal){
+                    this.state = '吃';
+                    Ext.Msg.alert('event', this.name + ' 正在吃 ' + meal + '.');
+                });
+
+                //测试效果
+                Ext.get('btnWalk').on('click', function(){
+                    person.fireEvent('撸铁');
+                });
+                Ext.get('btnEat').on('click', function(){
+                    person.fireEvent('吃', '牛肉');
+                });
+                Ext.get('btnInfo').on('click', function(){
+                    Ext.Msg.alert('info', person.info(person.state));
+                });
+                
+
+            });
+
+        })();
+
+    </script>
+</head>
+<body style="padding:10px;">
+
+    <button id='test'>按钮</button> <br/>
+    <button id='btnWalk'>撸铁</button> <br/>
+    <button id='btnEat'>吃</button> <br/>
+    <button id='btnInfo'>Info</button>
+
+</body>
+</html>

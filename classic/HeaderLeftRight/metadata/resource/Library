@@ -1,0 +1,17 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Library",
+        "theme": "MyTritonTheme"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "theme": "string"
+    },
+    "designerId": "9a78f845-6352-4ac7-b83a-4179296ac504"
+}

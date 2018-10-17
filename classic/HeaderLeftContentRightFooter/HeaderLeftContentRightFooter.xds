@@ -1,0 +1,49 @@
+{
+    "name": "HeaderLeftContentRightFooter",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "lockUrlPrefix": true,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "570ee77a-0bfc-47b0-bb1b-7772ff3b7215",
+            "14919279-0e28-406c-9391-fcda2ba19b90",
+            "fe559d16-91c1-47e0-8577-a011a201a0a1"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "76d17007-2335-4c00-b7ab-dad9b996582b",
+            "167851aa-95cb-45f4-935c-bad20ad8cc46"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

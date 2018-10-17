@@ -1,0 +1,49 @@
+{
+    "name": "TabMenu",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "lockUrlPrefix": true,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+    },
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "35c69714-67c2-4b23-b866-4b95489c7ddb",
+            "dc427b0a-b147-4a29-a415-953572ee4c96",
+            "74a938a0-e0ed-4f22-9d21-07f2763be39d"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "d6a53836-080b-4f82-8772-33c644640c03",
+            "226c0470-d524-4646-8c5f-ff3163baf929"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
